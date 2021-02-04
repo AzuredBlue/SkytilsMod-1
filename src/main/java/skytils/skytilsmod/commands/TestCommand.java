@@ -10,11 +10,11 @@ import skytils.skytilsmod.core.FeatureManager;
 
 import java.util.List;
 
-public class SkytilsCommand extends CommandBase {
+public class TestCommand extends CommandBase {
 
     @Override
     public String getCommandName() {
-        return "skytils";
+        return "test";
     }
 
     @Override
@@ -24,7 +24,7 @@ public class SkytilsCommand extends CommandBase {
 
     @Override
     public List<String> getCommandAliases() {
-        return Lists.newArrayList("st");
+        return Lists.newArrayList("sttest");
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SkytilsCommand extends CommandBase {
     public void processCommand(ICommandSender sender, String[] args) {
         FeatureManager fm = Skytils.FEATURE_MANAGER;
         EntityPlayerSP player = (EntityPlayerSP) sender;
-        player.addChatComponentMessage(new ChatComponentText("Thank you for using Skytils!"));
-        player.addChatComponentMessage(new ChatComponentText(fm.list()));
+        player.addChatComponentMessage(new ChatComponentText("Test test, 123"));
     }
 }
+
