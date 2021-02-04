@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import skytils.skytilsmod.commands.SkytilsCommand;
+import skytils.skytilsmod.commands.ToggleCommand;
 import skytils.skytilsmod.core.FeatureManager;
 
 @Mod(modid = Skytils.MODID, name = Skytils.MOD_NAME, version = Skytils.VERSION, acceptedMinecraftVersions = "[1.8.9]", clientSideOnly = true)
@@ -18,12 +19,13 @@ public class Skytils {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         ClientCommandHandler.instance.registerCommand(new SkytilsCommand());
+        ClientCommandHandler.instance.registerCommand(new ToggleCommand());
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        Skytils.FEATURE_MANAGER.init();
+//        Skytils.FEATURE_MANAGER.init();
     }
 
 }
